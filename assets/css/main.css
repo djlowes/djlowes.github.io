@@ -2266,6 +2266,18 @@
 						width: 100%;
 					}
 
+/* Quote Box */
+
+	.quotebox {
+		height: 10%;
+		width: 80%;
+		background: white;
+		border-radius: 5px;
+		display: inline-block;
+		color: black;
+
+	}
+
 /* List */
 
 	ol {

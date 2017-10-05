@@ -26,11 +26,11 @@ $(document).ready(function() {
     var index = 0;
 
     var ctrl = bubbleText({
-        element: $('#bubble'),
+        element: $('#quotes'),
         newText: phrases[index++],
-        letterSpeed: 200,
+        letterSpeed: 50,
         repeat: 19,
-        timeBetweenRepeat: 1000,
+        timeBetweenRepeat: 5000,
         callback: function() {
             this.newText = phrases[index++ % len];
         },
