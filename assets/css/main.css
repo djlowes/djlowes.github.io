@@ -2268,13 +2268,14 @@
 
 /* Quote Box */
 
-	.quotebox {
+	#quotebox {
 		height: 10%;
 		width: 80%;
 		background: white;
 		border-radius: 5px;
 		display: inline-block;
 		color: black;
+		vertical-align: top;
 
 	}
 

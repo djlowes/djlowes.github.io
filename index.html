@@ -158,11 +158,30 @@
 						<div class="inner">
 							<div class="content">
 								<h2 class="major">Statistics</h2>
-								<p>Here are 100 weird and interesting statistics that you may not be aware of. Also, if you would like to know 100 stats about me, click <a href="#" class="special">here</a></p>
-								<div id ="quotebox"><span id="quotes"></span></div>
+								<p>Here are 100 weird and interesting statistics/facts that you may not be aware of. Also, if you would like to know 100 stats about me <a href="#" class="special">click here</a></p>
+								<div id ="quotebox"><span id="quote"></span></div>
 							</div>
 						</div>
 					</section>
+
+	<!-- Statistics Rotate Script -->
+	<script>
+		var arr = ['When Twister was introduced in 1966, it was denounced by critics as "sex in a box.', 'There are more lifeforms living on your skin than there are people on the planet.', 'Otters sleep holding hands.', 'OJ Simpson was originally cast to play Terminator, but the studio was afraid that no one would buy him as a remorseless killer.', 'Leonardo da Vinci could write with one hand and draw with the other at the same time.', 'The last man to walk on the moon, Gene Cernan, promised his daughter he’d write her initials on the moon. He did, and her initials, “TDC,” will probably be on the moon for tens of thousands of years.', 'The Mimic Octopus can not only change colours, but will mimic the shapes of other animals, like the flounder, lionfish, and sea snakes.', 'Twenty percent of office coffee mugs contain fecal matter.', 'If you were to remove all of the empty space from the atoms that make up every human on earth, the entire world population could fit into an apple.', 'In the 1960s, the CIA tried to spy on the Kremlin and Russian embassies by turning cats into listening devices. The program, called Acoustic Kitty, involved surgically implanting batteries, microphones and antennae inside cats.', 'The three wealthiest families in the world have more assets than the combined wealth of the forty-eight poorest nations.', 'One traffic jam lasted lasted for more than 10 days, with cars only moving 0.6 miles a day', 'Dueling is legal in Paraguay as long as both parties are registered blood donors.'],
+		    i = 0, // Start Index
+		    len = arr.length,
+		    $el = $('#quote'),
+		    $temp = $('<span />'); // Helper - Will measure Text width
+
+		$temp.hide().appendTo( $el.parent() ); // Setup Helper
+
+		(function loop() {
+		  var w = $temp.text( arr[i%=len] ).width(); // set text + get width
+		  $el.fadeTo(600,0).animate({width: w}, 300, function(){
+		    $(this).text( arr[i++] ).fadeTo(600, 1);
+		  });
+		  setTimeout(loop, 5000);
+		}());
+	</script>
 
 				<!-- Footer -->
 					<section id="footer">
@@ -213,7 +232,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="dependencies/jquery.bubble.text.js" /></script>
 			<script src="dependencies/script.js" /></script>
-			<script src="assets/js/rotate.js" /></script>
+			<!-- <script src="assets/js/rotate.js" /></script> for div quote - find new way -->
 
 
 	</body>
