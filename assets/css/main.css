@@ -2597,6 +2597,9 @@
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 10%;
 	}
 
 	table {
@@ -3979,9 +3982,9 @@
 /* Login Page */
 
 	#login {
-		margin-top: 20.5em;
-		margin-left: 11.5em;
-		margin-right: 11.5em;
+		margin-top: 10%;
+		margin-left: 25%;
+		margin-right: 25%;
 		text-align: center;
 		border: 1px solid white;
 		border-radius: 15px;
