@@ -2279,6 +2279,11 @@
 
 	}
 
+	#quote {
+		margin-right: 1%;
+		font-weight: 500;
+	}
+
 /* Header text*/
 
 	.first {
