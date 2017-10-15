@@ -1,0 +1,142 @@
+/* start */
+
+body {
+  border: 1px black dotted;
+  display: flex
+  flex-direction:column;
+}
+
+#header {
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  border: 1px black dotted;
+  text-align: center;
+}
+
+#score-head {
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  border: 1px black dotted;
+  text-align: center;
+}
+
+#score-box {
+  height: 25%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 80px;
+}
+
+#sb {
+  font-size: 80px;
+  font-size: 80px;
+  border: 1px black dotted;
+  text-align: center;
+}
+
+#crystal-head {
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#crystals {
+  height: 25%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#guess-head {
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#guess-box {
+  height: 25%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 80px;
+}
+
+#gb {
+  font-size: 80px;
+  font-size: 80px;
+  border: 1px black dotted;
+  text-align: center;
+}
+
+#win-loss-head {
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+#win-loss {
+  display: flex:
+  flex-direction:column;
+  height: 10%;
+  width: 40%;
+  margin-left: 33.33%;
+  margin-right: 33.33%;
+  border: 1px black dotted;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#win {
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  width: 25%;
+  border-right: 1px solid black;
+}
+
+#loss {
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  width: 25%;
+  border-left: 1px solid black;
+}
