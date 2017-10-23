@@ -54,7 +54,7 @@
 							<tbody>
 								<tr>
 									<td>Age</td>
-									<td>Insert script</td>
+									<td id="myAge"></td>
 									<td>Years</td>
 								</tr>
 								<tr>
@@ -207,7 +207,21 @@
 					</div>
 	</div>
 
+<script>
+var age, daysBetweenDates;
+daysBetweenDates = function(d1, d2) {
+  var diffDays, oneDay;
+  oneDay = 24 * 60 * 60 * 1000;
+  diffDays = (d2 - Date.parse(d1)) / oneDay;
+  return diffDays;
+};
 
+age = function() {
+  $('#myAge').text(daysBetweenDates('Sep 26, 1984 08:00:00', new Date()) / 365);
+};
+
+setInterval(age, 100);
+</script>
 
 
 		<!-- Scripts -->
