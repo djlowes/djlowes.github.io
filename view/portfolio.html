@@ -99,42 +99,45 @@
 					</section>
 
           <!-- Footer -->
-      		<section id="footer">
-      			<div class="inner">
-      				<h2 class="major">Get in touch</h2>
-      				<p>I would love to hear from you. If you have an idea, want me to work for you or just want to hang and grab a coffee, please contact me using the form or email below. Muchos Gracia.</p>
-      				<form method="post" action="#">
-      					<div class="field">
-      						<label for="name">Name</label>
-      						<input type="text" name="name" id="name" />
-      					</div>
-      					<div class="field">
-      						<label for="email">Email</label>
-      						<input type="email" name="email" id="email" />
-      					</div>
-      					<div class="field">
-      						<label for="message">Message</label>
-      						<textarea name="message" id="message" rows="4"></textarea>
-      					</div>
-      					<ul class="actions">
-      						<li><input type="submit" value="Send Message" /></li>
-      					</ul>
-      				</form>
-      				<ul class="contact">
-      					<li class="fa-home">
-      						San Francisco<br />
-      					</li>
-      					<li class="fa-envelope"><a href="mailto:djlowes@gmail.com?Subject=Hey%20djlowes!">djlowes@gmail.com</a></li>
-      					<li class="fa-github"><a href="http://www.github.com/djlowes">github.com/djlowes</a></li>
-      					<li class="fa-twitter"><a href="http://www.twitter.com/djlowes">twitter.com/djlowes</a></li>
-      					<li class="fa-facebook"><a href="http://www.facebook.com/djlowes">facebook.com/djlowes</a></li>
-      					<li class="fa-instagram"><a href="http://www.instagram.com/russell_westbark">instagram.com/russell_westbark</a></li>
-      				</ul>
-      				<ul class="copyright">
-      					<li>A <a href="http://html5up.net">Html5up</a> Design</li>
-      				</ul>
-      			</div>
-      		</section>
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>I would love to hear from you. If you have an idea, want me to work for you or just want to hang and grab a coffee, please contact me using the form or email below. Muchos Gracia.</p>
+							<div style="display:none;" id="thankyou_message">
+								<h3>Thanks for contacting me! I'll get back to you very soon</h3>
+							</div>
+							<form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbz48T4MXfSTi94U7ZK0XUWmsWQ1dCX9Zkt8_v02rZ9j5DRQr0c/exec">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="4"></textarea>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="fa-home">
+									San Francisco<br />
+								</li>
+								<li class="fa-envelope"><a href="mailto:djlowes@gmail.com?Subject=Hey%20djlowes!">djlowes@gmail.com</a></li>
+								<li class="fa-github"><a href="http://www.github.com/djlowes">github.com/djlowes</a></li>
+								<li class="fa-twitter"><a href="http://www.twitter.com/djlowes">twitter.com/djlowes</a></li>
+								<li class="fa-facebook"><a href="http://www.facebook.com/djlowes">facebook.com/djlowes</a></li>
+								<li class="fa-instagram"><a href="http://www.instagram.com/russell_westbark">instagram.com/russell_westbark</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>A <a href="http://html5up.net">Html5up</a> Design</li>
+							</ul>
+						</div>
+					</section>
 
 			</div>
 
@@ -144,6 +147,7 @@
 			<script src="../assets/js/jquery.scrollex.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="assets/js/form-handler.js"></script>
 
 	</body>
 </html>
