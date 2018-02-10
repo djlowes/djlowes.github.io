@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 
     $(".icon").hover(
-        function() {$(this).attr("src","images/David_Lowes_Profile5.png");},
-        function() {$(this).attr("src","images/David_Lowes_Profile2.jpg");
+        function() {$(this).attr("src","assets/images/David_Lowes_Profile5.png");},
+        function() {$(this).attr("src","assets/images/David_Lowes_Profile2.jpg");
     });
 });
