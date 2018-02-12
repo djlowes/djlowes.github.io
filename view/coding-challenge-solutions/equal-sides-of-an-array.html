@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+        <nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Equal Sides Of An Array</h2>
+						<p>You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.</p>
+
+						<i>For Example</i><br/>
+						<b>Let's say you are given the array {1,2,3,4,3,2,1}:</b><br/>
+						Your function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.
+<br/>
+						<b>You are given the array {1,100,50,-51,1,1}:</b><br/>
+						Your function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
+<br/>
+						<b>You are given the array {20,10,-80,10,10,15,35}</b><br/>
+						At index 0 the left side is {}<br/>
+						The right side is {10,-80,10,10,15,35}<br/>
+						They both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)<br/>
+						Index 0 is the place where the left side and right side are equal.<br/><br/>
+						<h6>NOTE: Array index starts at 0 in Javascript</h6>
+						<b>Input format</b><br/>
+						An integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.<br/><br/>
+						<b>Output format</b><br/>
+						The lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.<br/><br/>
+							<h4>Solution</h4>
+							<pre><code>
+function findEvenIndex(arr) {
+  var sum = 0,
+  leftSum = 0;
+  // add all ints first
+  for (var i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  // subtract all ints so you can find the middle with an exit clause if statement
+  for (var i = 0; i < arr.length; i++) {
+    sum = sum - arr[i];
+    if (leftSum === sum) {
+      return i;
+    }
+
+    leftSum = leftSum + arr[i];
+  }
+
+  return -1;
+}
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Scripts -->
+					<script src="../assets/js/skel.min.js"></script>
+					<script src="../assets/js/jquery.min.js"></script>
+					<script src="../assets/js/jquery.scrollex.min.js"></script>
+					<script src="../assets/js/util.js"></script>
+					<script src="../assets/js/main.js"></script>
+					<script src="assets/js/form-handler.js"></script>
+
+			</body>
+		</html>

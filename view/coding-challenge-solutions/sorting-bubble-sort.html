@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+        <nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Sorting - Bubble Sort</h2>
+						<h6>HackerRank > Cracking the Coding Interview > Sorting: Bubble Sort</h6>
+						Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order. <br/>
+<br/>
+						<i>Example:</i><br/>
+						<b>First Pass:</b><br/>
+						( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.<br/>
+						( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4<br/>
+						( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2<br/>
+						( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.<br/>
+<br/>
+						<b>Second Pass:</b><br/>
+						( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )<br/>
+						( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2<br/>
+						( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br/>
+						( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )<br/>
+						Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.<br/>
+<br/>
+						<b>Third Pass:</b><br/>
+						( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br/>
+						( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br/>
+						( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br/>
+						( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )<br/><br/>
+						<p>Given an X element array of distinct elements, sort the array in ascending order using the Bubble Sort algorithm. Once sorted, print the following three lines:</p>
+						<ol>
+							<li>Array is sorted in X swaps, <i> where X is the number of swaps taken to sort</i></li>
+							<li>First Element: X, <i>where X is the first element in the sorted array.</i></li>
+							<li>Last Element: X, <i>where X is the last element in the sorted array.</i></li>
+						</ol>
+						<b>Input format</b><br/>
+						<ul>
+							<li>The first line contains an integer, denoting the number of elements in array.</li>
+							<li>The second line contains space-separated integers describing the respective values in the array</li>
+						</ul><br/>
+							<h4>Solution</h4>
+							<pre><code>
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+
+var input_stdin = "";
+var input_stdin_array = "";
+var input_currentline = 0;
+
+process.stdin.on('data', function (data) {
+    input_stdin += data;
+});
+
+process.stdin.on('end', function () {
+    input_stdin_array = input_stdin.split("\n");
+    main();
+});
+
+function readLine() {
+    return input_stdin_array[input_currentline++];
+}
+
+function main() {
+    var n = parseInt(readLine());
+    a = readLine().split(' ');
+    a = a.map(Number);
+
+/////////////// Start Code Here ////////////////////
+
+    // Set variable to calculate number of iterations, used in stdout line 1
+    var counter = 0;
+    // Make array more readible for rest of code
+    var arr = a;
+    var len = a.length;
+
+        // Iterate through the array, checking if the left element is greater than the right element
+        for (var i = len-1; i>=0; i--){
+            for(var j = 1; j<=i; j++){
+                if(arr[j-1]>arr[j]){
+                    // When it is, swap the elements around and count how many times this function has been performed
+                    var temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                    counter++;
+                }
+            }
+        }
+   console.log("Array is sorted in " + counter + " swaps.");
+   console.log("First Element: " + arr[0]);
+   console.log("Last Element: " + arr[len-1]);
+
+/////////////// End Code Here ////////////////////
+}
+
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Scripts -->
+					<script src="../assets/js/skel.min.js"></script>
+					<script src="../assets/js/jquery.min.js"></script>
+					<script src="../assets/js/jquery.scrollex.min.js"></script>
+					<script src="../assets/js/util.js"></script>
+					<script src="../assets/js/main.js"></script>
+					<script src="assets/js/form-handler.js"></script>
+
+			</body>
+		</html>
