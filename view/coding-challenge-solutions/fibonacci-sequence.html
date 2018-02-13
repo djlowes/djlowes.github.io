@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+        <nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Fibonacci Sequence</h2>
+						<h6>Iteratively and Recursively</h6><br/>
+						<i>Fibonacci via Wikipedia:</i>
+						<blockquote>By definition, the first two numbers in the Fibonacci sequence are either 1 and 1, or 0 and 1, depending on the chosen starting point of the sequence, and each subsequent number is the sum of the previous two.</blockquote>
+						<p>An example of the sequence can be seen as follows:</p>
+						<pre><code>1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 … </code></pre>
+						<h3>Solution - <b>Iteratively</b></h3>
+						<pre><code>
+var looping = function(n) {
+    var a = 0, b = 1, f = 1;
+    for(var i = 2; i <= n; i++) {
+        f = a + b;
+        a = b;
+        b = f;
+    }
+    return f;
+};
+						</code></pre>
+						<h3>Solution - <b>Recursively</b></h3>
+						<pre><code>
+var recursive = function(n) {
+    if(n <= 2) {
+        return 1;
+    } else {
+        return this.recursive(n - 1) + this.recursive(n - 2);
+    }
+};
+						</pre></code>
+Recursion can be a little tricky to wrap your head around. In the above code, we are going to plan on receiving the sequence value at index five because anything larger is going to be rough to type out. You can break this down like the following:<br/><br/>
+						<!-- <pre><code>
+recursive(4) + recursive(3)
+(recursive(3) + recursive(2)) + (recursive(2) + recursive(1))
+((recursive(2) + recursive(1)) + 1) + (1 + 1)
+((1 + 1) + 1) + (1 + 1)
+5
+						</pre></code> -->
+						<div align="center">
+						<img src="../../assets/images/fib.png" height="400" width="1000">
+					</div>
+You can see above that on every line it is one further iteration through the recursive process. Based on our function logic, as soon as n <= 2 then we just return a value of one. At the furthest breakdown, our sum turns into five which is the Fibonacci number at index five.<br/><br/>
+						<h6>Source: <a href="https://www.thepolyglotdeveloper.com">The Polygot Developer</a></h6>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>
