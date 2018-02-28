@@ -2606,6 +2606,14 @@
 		margin-top: 2%;
 	}
 
+	.table-wrapperTwo {
+		-webkit-overflow-scrolling: touch;
+		overflow-x: auto;
+		margin-left: 30%;
+		margin-right: 30%;
+		margin-top: 2%;
+	}
+
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
