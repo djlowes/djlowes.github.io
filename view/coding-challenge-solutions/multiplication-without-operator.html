@@ -49,40 +49,22 @@
 				<section id="wrapper">
 					<header>
 					<div class="inner">
-						<h2>Implement an exponent function</h2>
-						<h6>The Exponentiation Operator explained using <i>Math.pow</i></h6>
+						<h2>Write a multiply function that multiples 2 integers without using *</h2>
 						<br/>
-						If you want to do computation to any power in today's Javascript, there is no point avoiding the Math.pow function. With this, you can pass in a <i>base</i> and an <i>exponent</i> and you will get in return the result of raising that base to the power exponent. Here are some examples:
-						<br/>
+
 						<pre><code>
-
-var squared = function(x) {
-	return Math.pow(x, 2);
+function multiply(a, b){
+   var n = num;
+   for(var i = 1; i < times; i++)
+      num += n; // increments itself
+   return num;
 }
 
-var cubed = function(x) {
-	return Math.pow(x, 3);
-}
-
-var fourthPower(x) {
-	return Math.pow(x, 4);
-}
-
-// OR USING ES6 -
-
-const squared = x => Math.pow(x, 2);
-const cube = x => Math.pow(x, 3);
-const fourthPower = x => Math.pow(x, 4);
-
-// RESULTS
-square(4)
-// 16
-cube(8)
-// 512
-fourthPower(5)
-// 625
+multiply(10, 5)
+// 50
 						</code></pre>
-
+					</br/>
+					However this does not account for handling zeros and negative integers. // TO DO
 
 
 					</div>
