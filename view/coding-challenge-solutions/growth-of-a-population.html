@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114124298-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-114124298-1');
+		</script>
+
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+							<li><a href="./../reading-list.html">Books</a></li>
+							<li><a href="./../coding-challenge-solutions.html">Coding Solutions</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Growth of a population</h2>
+						<h6>Codewars question</h6>
+						<p>In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?</p>
+						<b>At the end of the first year there will be: </b><br/>
+						1000 + 1000 * 0.02 + 50 => 1070 inhabitants<br/><br/>
+						<b>At the end of the 2nd year there will be:</b><br/>
+						1070 + 1070 * 0.02 + 50 => 1141 inhabitants (number of inhabitants is an integer)<br/><br/>
+						<b>At the end of the 3rd year there will be: </b><br/>
+						1141 + 1141 * 0.02 + 50 => 1213<br/><br/>
+						<p>It will need 3 years</p>
+						<b>More generally given parameters:</b><br/>
+						p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass) the function nb_year should return n number of entire years needed to get a population greater or equal to p.<br/>
+						aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)<br/><br/>
+						<b>Solution</b>
+							<pre><code>
+function nbYear(p0, percent, aug, p) {
+  var n = 0;
+  while (p0 < p) {
+    n++
+    p0 = p0 + (p0*percent/100) + aug;
+  }
+  if (p0 >= p) {
+      return n;
+  }
+  return n;
+}
+
+// Sample tests
+Test.describe("nbYear",function() {
+Test.it("Basic tests",function() {
+    Test.assertEquals(nbYear(1500, 5, 100, 5000), 15);
+    Test.assertEquals(nbYear(1500000, 2.5, 10000, 2000000), 10);
+    Test.assertEquals(nbYear(1500000, 0.25, 1000, 2000000), 94);
+})})
+
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>

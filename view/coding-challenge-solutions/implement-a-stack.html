@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114124298-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-114124298-1');
+		</script>
+
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+							<li><a href="./../reading-list.html">Books</a></li>
+							<li><a href="./../coding-challenge-solutions.html">Coding Solutions</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Implement a stack with push and pop functions</h2>
+						<h6>Definition of a Stack</h6>
+						<blockquote>A stack is a data structure based on the principle LIFO (Last In First Out). A stack is a container to hold nodes and has two operations — push and pop. The push operation is to add nodes into the stack and pop operation is to delete nodes from the stack and returns the top most node.</blockquote>
+						<h6>Time Complexity</h6>
+						<table class="alt">
+						<thead>
+							<tr>
+								<th>Push</th>
+								<th>Pop</th>
+								<th>Peek</th>
+								<th>Empty</th>
+								<th>Size</th>
+								<th>Swap</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>O(1)</td>
+								<td>O(1)</td>
+								<td>O(1)</td>
+								<td>O(1)</td>
+								<td>O(1)</td>
+								<td>O(1)</td>
+							</tr>
+						</tbody>
+					</table>
+							Learn more about Big O <a href="http://bigocheatsheet.com/">here</a><br/><br/>
+						<h6>Why use a stack instead of an array?</h6>
+						<ol>
+							<li>Most methods on the Array Prototype have a time complexity of O(n). Let’s look at a specific example like splice(). When you splice an array, it has to find the specific index, remove a specified number of elements, then shift all the following elements forward to fill the place of the removed elements. Contrast this with using the stack (object) which has direct look-up of properties and does not have to be kept ‘in-order’.</li>
+							<li>Arrays take up a block of space because they have to keep their order, where as an object does not.</li>
+						</ol>
+						<h6>What are the various Stack operations?</h6>
+						<ol>
+							<li><b>pop</b> — Pulls (removes) the element out of the stack. The location is specified by the pointer</li>
+							<li><b>push</b> — Pushes (inserts) the element in the stack. The location is specified by the pointer.</li>
+							<li><b>peek</b> — returns the item on the top of the stack, without removing it.</li>
+							<li><b>empty</b> — returns true if the stack is empty, false otherwise</li>
+							<li><b>swap</b> — the two top most elements of the stack can be swapped</li>
+						</ol>
+							<h4>The code</h4>
+							<pre><code>
+// Creates a stack
+var Stack = function() {
+    this.count = 0;
+    this.storage = {};
+}
+
+// Adds a value onto the end of the stack
+Stack.prototype.push = function(value) {
+    this.storage[this.count] = value;
+    this.count++;
+}
+
+// Removes and returns the value at the end of the stack
+Stack.prototype.pop = function() {
+    // Check to see if the stack is empty
+    if (this.count === 0) {
+        return undefined;
+    }
+
+    this.count--;
+    var result = this.storage[this.count];
+    delete this.storage[this.count];
+    return result;
+}
+
+// Returns the length of the stack
+Stack.prototype.size = function() {
+    return this.count;
+}
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114124298-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-114124298-1');
+		</script>
+
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+							<li><a href="./../reading-list.html">Books</a></li>
+							<li><a href="./../coding-challenge-solutions.html">Coding Solutions</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Strings: Making Anagrams</h2>
+						<h6>HackerRank > Cracking the Coding Interview > Strings: Making Anagrams</h6>
+						Alice is taking a cryptography class and finding anagrams to be very useful. We consider two strings to be anagrams of each other if the first string's letters can be rearranged to form the second string. In other words, both strings must contain the same exact letters in the same exact frequency For example, bacdc and dcbac are anagrams, but bacdc and dcbad are not. <br/><br/>
+						Alice decides on an encryption scheme involving two large strings where encryption is dependent on the minimum number of character deletions required to make the two strings anagrams. Can you help her find this number?<br/><br/>
+						<p>Given two strings, X and X, that may or may not be of the same length, determine the minimum number of character deletions required to make X and X anagrams. Any characters can be deleted from either of the strings.</p>
+
+						<b>Constraints</b><br/>
+						It is guaranteed that  and  consist of lowercase English alphabetic letters (i.e.,  through ).<br/><br/>
+
+						<b>Output Format</b><br/>
+						Print a single integer denoting the number of characters you must delete to make the two strings anagrams of each other.<br/><br/>
+
+						<b>Sample Input</b><br/>
+						cde<br/>
+						abc<br/><br/>
+
+						<b>Sample Output</b><br/>
+						4<br/><br/>
+
+						<b>Explanation</b><br/>
+						// We delete the following characters from our two strings to turn them into anagrams of each other:<br/>
+						// Remove d and e from cde to get c.<br/>
+						// Remove a and b from abc to get c.<br/>
+						// We must delete  characters to make both strings anagrams, so we print  on a new line.<br/><br/>
+
+
+							<h4>Solution</h4>
+							<pre><code>
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+
+var input_stdin = "";
+var input_stdin_array = "";
+var input_currentline = 0;
+
+process.stdin.on('data', function (data) {
+    input_stdin += data;
+});
+
+process.stdin.on('end', function () {
+    input_stdin_array = input_stdin.split("\n");
+    main();
+});
+
+function readLine() {
+    return input_stdin_array[input_currentline++];
+}
+
+function main() {
+    var a = readLine();
+    var b = readLine();
+
+/////////////// Start Code Here ////////////////////
+
+    aOne = a.split("");
+    aTwo = b.split("");
+    // aThree = [];
+    counter = 0;
+
+// If you reverse engineer, you will find that the number of times it takes to remove elements is the sum the lengths of the arrays, minus the amount of correct unique number combinations.
+    if (aOne.length < aTwo.length){
+        for (let j = 0; j < aOne.length; j ++) {
+            for (let i = 0; i < aTwo.length; i ++ ){
+                if (aOne[j] === aTwo[i]) {
+                    counter ++;
+                    aTwo[i] = 0; //ensures elements are not counted twice
+                    break;
+                }
+             }
+         }
+    console.log(aTwo.length + aOne.length - (counter * 2));
+
+    } else {
+        for (let i = 0; i < aTwo.length; i ++) {
+            for (let j = 0; j < aOne.length; j++) {
+                if (aTwo[i] === aOne[j]) {
+                    counter++;
+                    aOne[j] = 0; //ensures elements are not counted twice
+                    break;
+                }
+            }
+        }
+    console.log(aOne.length + aTwo.length - (counter * 2));
+    }
+}
+
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114124298-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-114124298-1');
+		</script>
+
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+							<li><a href="./../reading-list.html">Books</a></li>
+							<li><a href="./../coding-challenge-solutions.html">Coding Solutions</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Number in expanded form</h2>
+							<p>You will be given a number and you will need to return it as a string in Expanded Form. For example:</p>
+							expandedForm(12); // Should return '10 + 2'<br/>
+							expandedForm(42); // Should return '40 + 2'<br/>
+							expandedForm(70304); // Should return '70000 + 300 + 4'<br/>
+							NOTE: All numbers will be whole numbers greater than 0.<br/><br/>
+
+
+							<h4>Solution</h4>
+							<pre><code>
+function expandedForm(num) {
+var arr = []
+var str = '';
+num = num.toString();
+ for (let i = 0; i'<'num.length; i++) {
+  if (num[i] !== '0') {
+    str = str + num[i];
+    if (i === num.length - 1) {
+      arr.push(str);
+      str = '';
+    }
+      for(var j = i + 1; j < num.length; j++) {
+        str = str + '0';
+          if (j === num.length - 1) {
+            arr.push(str);
+            str = '';
+         }
+      }
+    }
+  }
+   return arr.join(' + ');
+}
+
+// Sample Tests
+// Test.assertEquals(expandedForm(12), '10 + 2');
+// Test.assertEquals(expandedForm(42), '40 + 2');
+// Test.assertEquals(expandedForm(70304), '70000 + 300 + 4');
+
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>

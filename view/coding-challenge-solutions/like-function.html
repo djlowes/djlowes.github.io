@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114124298-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-114124298-1');
+		</script>
+
+		<title>David Lowes - Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+	</head>
+	<body>
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../../index.html">David Lowes</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+          <div class="inner">
+            <h2>Menu</h2>
+            <ul class="links">
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="./../portfolio.html">Portfolio</a></li>
+              <li><a href="./../statistics.html">Statistics</a></li>
+							<li><a href="./../reading-list.html">Books</a></li>
+							<li><a href="./../coding-challenge-solutions.html">Coding Solutions</a></li>
+              <li><a href="./../login.html">My Resume</a></li>
+            </ul>
+            <a href="#" class="close">Close</a>
+          </div>
+        </nav>
+
+				<!-- Wrapper -->
+				<section id="wrapper">
+					<header>
+					<div class="inner">
+						<h2>Implement Facebook's Like Function</h2>
+						<h6>Codewards Question</h6>
+							<p>Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item. It must return the display text as shown in the examples:</p>
+							likes [] must be ==> "no one likes this"<br/>
+							likes ["Peter"] must be ==> "Peter likes this"<br/>
+							likes ["Jacob", "Alex"] must be ==> "Jacob and Alex like this"<br/>
+							likes ["Max", "John", "Mark"] must be ==> "Max, John and Mark like this"<br/>
+							likes ["Alex", "Jacob", "Mark", "Max"] must be ==> "Alex, Jacob and 2 others like this"<br/>
+							For more than 4 names, the number in and 2 others simply increases.<br/><br/>
+
+							<h4>Solution</h4>
+							<pre><code>
+function likes(names) {
+  if (names.length === 0) {
+  	return "no one likes this";
+  } else if (names.length === 1){
+  	return names[0] + " likes this";
+  } else if (names.length === 2) {
+  	return names[0] + " and " + names[1] + " like this";
+  } else if (names.length === 3) {
+  	return names[0] + ", " + names[1] + " and " + names[2] + " like this";
+  } else if (names.length > 3) {
+  	return names[0] + ", " + names[1] + " and " + (names.length-2) + " others like this";
+  }
+}
+							</code></pre>
+					</div>
+					</header>
+							<!-- Footer -->
+							<section id="footer">
+								<div align="center">
+									<h4><a href="../../view/coding-challenge-solutions.html">More Solutions</a></h4>
+									<h4>Next Solution</h4>
+									<h4><a href="../../index.html">Homepage</a></h4>
+								</div>
+							</section>
+
+					</div>
+
+
+			</body>
+		</html>
