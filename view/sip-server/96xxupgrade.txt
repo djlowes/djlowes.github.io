@@ -1,0 +1,160 @@
+############################################################  
+##                                                        ##
+## AVAYA 96XX IP TELEPHONE SOFTWARE UPGRADE CONFIGURATION ##
+##              *** Aug 09, 2016 ***                      ##
+##                                                        ##
+## This file upgrades the following telephones            ##
+## to the indicated releases:                             ##
+##    9610  -  Release 3.1                                ##
+##    9620  -  Release 3.2.2                              ##
+##    9620L -  Release 3.2.7                              ##
+##    9620C -  Release 3.2.7                              ##
+##    9630  -  Release 3.2.2                              ##
+##    9630G -  Release 3.2.7                              ##
+##    9630G -  Release 3.2.7                              ##
+##    9640  -  Release 3.2.7                              ##
+##    9640G -  Release 3.2.7                              ##
+##    9650  -  Release 3.2.7                              ##
+##    9670  -  Release 3.2.7                              ##
+##                                                        ##
+############################################################
+##                                                        ##
+## BACKUP APPLICATION VERSION NUMBERS                     ##
+##    9610 - 3.1                                          ##
+##    9620 - 3.2.2                                        ##
+##    9630 - 3.2.2                                        ##
+##    96xx - 3.2.7                                        ##
+##                                                        ##
+############################################################
+##                                                        ##
+## PHONE APPLICATION VERSION NUMBERS                      ##
+##    9610 -  3.1                                         ##
+##    9620 -  3.2.2                                       ##
+##    9620L - 3.2.7                                       ##
+##    9620C - 3.2.7                                       ##
+##    9630 -  3.2.2                                       ##
+##    9630G - 3.2.7                                       ##
+##    9640 -  3.2.7                                       ##
+##    9640G - 3.2.7                                       ##
+##    9650 -  3.2.7                                       ##
+##    9670 -  3.2.7                                       ##
+##                                                        ##
+############################################################
+
+############################################################
+##            Check backup application version            ##           
+############################################################
+
+IF $SHA2CAPABLE SEQ 1 goto SHA2FILES
+
+IF $MODEL4 SEQ 9610      goto SHA1BACKUPAPP9610
+IF $MODEL  SEQ 9620D01A  goto SHA1BACKUPAPP9620
+IF $MODEL  SEQ 9620D02L  goto SHA1BACKUPAPP96XX
+IF $MODEL  SEQ 9620D03C  goto SHA1BACKUPAPP96XX
+IF $MODEL  SEQ 9630D01A  goto SHA1BACKUPAPP9620
+IF $MODEL  SEQ 9630GD01A goto SHA1BACKUPAPP96XX
+IF $MODEL4 SEQ 9640      goto SHA1BACKUPAPP96XX
+IF $MODEL4 SEQ 9650      goto SHA1BACKUPAPP96XX
+IF $MODEL4 SEQ 9670      goto SHA1BACKUPAPP9670
+goto END
+
+# SHA1BACKUPAPP96XX
+IF $VPNACTIVE SEQ 1 goto SHA1PHONEAPP96XX
+IF $BOOTNAME SEQ hb96xxua3_2_7B.bin goto SHA1PHONEAPP96XX
+IF $BOOTNAME SEQ hb96xxua3_2_7B_SHA256.bin goto SHA1PHONEAPP96XX
+SET APPNAME hb96xxua3_2_7B.bin
+goto GETSET
+
+# SHA1BACKUPAPP9670
+IF $VPNACTIVE SEQ 1 goto SHA1PHONEAPP9670
+IF $BOOTNAME SEQ hb9670ua3_2_7B.bin goto SHA1PHONEAPP9670
+IF $BOOTNAME SEQ hb9670ua3_2_7B_SHA256.bin goto SHA1PHONEAPP9670
+SET APPNAME hb9670ua3_2_7B.bin
+goto GETSET
+
+# SHA1BACKUPAPP9610
+IF $VPNACTIVE SEQ 1 goto SHA1PHONEAPP9610
+IF $BOOTNAME SEQ hb96xxua3_1_05_S.bin goto SHA1PHONEAPP9610
+SET APPNAME hb96xxua3_1_05_S.bin
+goto GETSET
+
+# SHA1BACKUPAPP9620
+IF $VPNACTIVE SEQ 1 goto SHA1PHONEAPP9620
+IF $BOOTNAME SEQ hb96xxua3_2_2A.bin goto SHA1PHONEAPP9620
+SET APPNAME hb96xxua3_2_2A.bin
+goto GETSET
+
+############################################################
+##            Check phone application version             ##           
+############################################################
+
+# SHA1PHONEAPP96XX
+SET APPNAME ha96xxua3_2_7B.bin
+goto GETSET
+
+# SHA1PHONEAPP9670
+SET APPNAME ha9670ua3_2_7B.bin
+goto GETSET
+
+# SHA1PHONEAPP9610
+SET APPNAME ha96xxua3_1_05_S.bin
+goto GETSET
+
+# SHA1PHONEAPP9620
+SET APPNAME ha96xxua3_2_2A.bin
+goto GETSET
+
+
+# SHA2FILES
+
+############################################################
+##            Check backup application version            ##           
+############################################################
+
+IF $MODEL  SEQ 9620D02L  goto BACKUPAPP96XX
+IF $MODEL  SEQ 9620D03C  goto BACKUPAPP96XX
+IF $MODEL  SEQ 9630GD01A goto BACKUPAPP96XX
+IF $MODEL4 SEQ 9640      goto BACKUPAPP96XX
+IF $MODEL4 SEQ 9650      goto BACKUPAPP96XX
+IF $MODEL4 SEQ 9670      goto BACKUPAPP9670
+goto END
+
+# BACKUPAPP96XX
+IF $VPNACTIVE SEQ 1 goto PHONEAPP96XX
+IF $BOOTNAME SEQ hb96xxua3_2_7B.bin goto PHONEAPP96XX
+IF $BOOTNAME SEQ hb96xxua3_2_7B_SHA256.bin goto PHONEAPP96XX
+SET APPNAME hb96xxua3_2_7B_SHA256.bin
+goto GETSET
+
+# BACKUPAPP9670
+IF $VPNACTIVE SEQ 1 goto PHONEAPP9670
+IF $BOOTNAME SEQ hb9670ua3_2_7B.bin goto PHONEAPP9670
+IF $BOOTNAME SEQ hb9670ua3_2_7B_SHA256.bin goto PHONEAPP9670
+SET APPNAME hb9670ua3_2_7B_SHA256.bin
+goto GETSET
+
+############################################################
+##            Check phone application version             ##           
+############################################################
+
+# PHONEAPP96XX
+IF $APPNAME SEQ ha96xxua3_2_7B.bin goto GETSET
+IF $APPNAME SEQ ha96xxua3_2_7B_SHA256.bin goto GETSET
+SET APPNAME ha96xxua3_2_7B_SHA256.bin
+goto GETSET
+
+# PHONEAPP9670
+IF $APPNAME SEQ ha9670ua3_2_7B.bin goto GETSET
+IF $APPNAME SEQ ha9670ua3_2_7B_SHA256.bin goto GETSET
+SET APPNAME ha9670ua3_2_7B_SHA256.bin
+goto GETSET
+
+############################################################
+##           Get additional configuration files           ##           
+############################################################
+
+# GETSET
+GET 46xxsettings.txt
+
+# END
+
