@@ -374,4 +374,33 @@ footer {
     left: 0;
     pointer-events: none;
     z-index: 1;
+}
+
+.password-protection {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.password-protection input {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.password-protection button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.password-protection button:hover {
+    background: #444;
 } 

@@ -63,8 +63,42 @@
                                     <span class="prompt">$</span>
                                     <span class="command">cd current-work</span>
                                 </div>
+                                <div class="line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">cat .env</span>
+                                </div>
                                 <div class="output">
-                                    <a href="https://cp30.ai" target="_blank" class="arrow-link">CP30.ai →</a>
+                                    <div class="password-protection">
+                                        <input type="password" id="work-password" placeholder="Enter password" />
+                                        <button onclick="checkWorkPassword()">Submit</button>
+                                    </div>
+                                    <div id="work-content" style="display: none;">
+                                        <a href="https://cp30.ai" target="_blank" class="arrow-link">CP30.ai →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card" id="recent-work">
+                    <div class="card-content">
+                        <div class="terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="terminal-title">recent-work.sh</div>
+                            </div>
+                            <div class="terminal-content">
+                                <div class="line">
+                                    <span class="prompt">$</span>
+                                    <span class="command">cd recent-work</span>
+                                </div>
+                                <div class="output">
+                                    <a href="https://g.co/gemini/share/6589ad2924fb" target="_blank" class="arrow-link">View →</a>
                                 </div>
                             </div>
                         </div>

@@ -187,4 +187,17 @@ function startMatrixRain() {
         }
     }
     setInterval(draw, 50);
+}
+
+function checkWorkPassword() {
+    const password = document.getElementById('work-password').value;
+    const workContent = document.getElementById('work-content');
+    
+    // Replace 'your-password-here' with your actual password
+    if (password === 'your-password-here') {
+        workContent.style.display = 'block';
+        document.querySelector('.password-protection').style.display = 'none';
+    } else {
+        alert('Incorrect password');
+    }
 } 
